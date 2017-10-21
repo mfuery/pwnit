@@ -1,0 +1,25 @@
+syntax = "proto3";
+package USER;
+
+message Asset {
+  fixed32 version = 1;
+  string item_name = 'item_name';
+  string item_desc = 'item_desc';
+}
+
+message Transaction {
+  fixed32 version = 1;
+  repeated Asset assets = 1;
+  repeated Output outputs = 3;
+}
+
+message Input {
+  bytes previous_transaction_hash = 1; int32 outpoint_index = 2;
+  bytes public_key = 3;
+  bytes signature = 4;
+}
+
+message Output {
+  int32 value = 1;
+  bytes address = 2; // hash160 of the recipient's public key
+}
