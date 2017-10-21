@@ -10,20 +10,21 @@ var config = {
   entry: APP_DIR + '/index.jsx',
   output: {
     path: BUILD_DIR,
-    filename: 'bundle.js'
+    filename: '[name]-[hash].js'
   },
   module: {
     loaders: [
       {
         test: /\.jsx?/,
         include: APP_DIR,
-	loader: 'babel-loader'
+        exclude: /node_modules/,
+        loader: 'babel-loader'
       }
     ]
   },
   plugins: [
     new BundleTracker({filename: './webpack-stats.json'})
-  ]
+  ],
 };
 
 module.exports = config;
