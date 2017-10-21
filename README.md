@@ -5,8 +5,12 @@ Prerequisites
 - 
 
 ```
-brew install protobuf
+brew update; brew install protobuf
 pip install -r requirements.txt
+```
 
+Navigate to frontend/scripts and enter 
 
+```
+npm install
 ```
