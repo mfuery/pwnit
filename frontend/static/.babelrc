@@ -1,4 +1,7 @@
 {
-	"presets": [["es2015", {"modules": false}], "react"],
-	"plugins": ["react-hot-loader/babel"]
+	"plugins": [
+		["relay", {"compat": true, "schema": "./schema.json"}],
+		"react-hot-loader/babel"
+	],
+	"presets": [["es2015", {"modules": false}], "react"]
 }

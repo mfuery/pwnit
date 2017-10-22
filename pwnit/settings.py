@@ -25,7 +25,7 @@ SECRET_KEY = '-&-uc6bfu2mrng&si4%*irnv45z6t5kyz^ui1i%0y1usbtsge('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -135,6 +135,12 @@ WEBPACK_LOADER = {
         'IGNORE': ['.+\.hot-update.js', '.+\.map']
     }
 }
+
+GRAPHENE = {
+    'SCHEMA': 'pwnit.schema.schema' # Where your Graphene schema lives
+}
+
+CORS_ORIGIN_WHITELIST = ('localhost:8000',)
 
 try:
     from local_settings import *
