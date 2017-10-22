@@ -12,7 +12,7 @@ class Api(TemplateView):
 
         bc = Blockchain()
         try:
-            response = bc.test_credentials()
+            response = bc.status_query()
             context['response'] = {
                 'applications': response.get('applications'),
                 'current.ref': response.get('current.ref'),

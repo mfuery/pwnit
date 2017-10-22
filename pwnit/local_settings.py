@@ -13,4 +13,5 @@ CREDS = {
     'keystore_password': 'keystorepassword',
     'key_alias': 'keyalias',
     'key_store_path': os.path.join(BASE_DIR, 'team4-money2020-1507583124-sandbox.p12'),
+    'app_identifier': 'TM04',
 }
