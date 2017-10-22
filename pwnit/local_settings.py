@@ -1,5 +1,10 @@
 # Mastercard Developers
-from .settings import *
+# from .settings import *
+import os
+
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 
 CREDS = {
     'username': 'team4@labshackathon.com',

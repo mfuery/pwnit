@@ -1,6 +1,5 @@
-from django.http import HttpResponse
 from django.views.generic import TemplateView
-from mastercardapicore import APIException
+from mastercardapicore.core.exceptions import APIException
 
 from pwnit.api.blockchain import Blockchain
 from pwnit.local_settings import CREDS
@@ -12,11 +11,30 @@ class Api(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(Api, self).get_context_data(**kwargs)
 
-        bc = Blockchain(CREDS['consumer_key'], CREDS['p12_path'], CREDS['key_alias'], CREDS['keystore_password'])
+        bc = Blockchain(
+                CREDS['consumer_key'],
+                CREDS['p12_path'],
+                CREDS['key_alias'],
+                CREDS['keystore_password']
+        )
         try:
-            context['response'] = bc.test_credentials
+            response = bc.test_credentials()
+            context['response'] = {
+                'applications': response.get('applications'),
+                'current.ref': response.get('current.ref'),
+                'current.slot': response.get('current.slot'),
+                'genesis.ref': response.get('genesis.ref'),
+                'genesis.slot': response.get('genesis.slot'),
+                'network': response.get('network'),
+                'version': response.get('version'),
+            }
         except APIException as e:
-            context['error'] = e
+            context['error'] = {
+                'HttpStatus': e.getHttpStatus(),
+                'Message': e.getMessage(),
+                'ReasonCode': e.getReasonCode(),
+                'Source': e.getSource()
+            }
 
         return context
 
