@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'frontend',
     'blockchain',
+    'webpack_loader',
 ]
 
 MIDDLEWARE = [
@@ -125,8 +126,8 @@ STATIC_URL = '/static/'
 WEBPACK_LOADER = {
     'DEFAULT': {
         'CACHE': not DEBUG,
-        'BUNDLE_DIR_NAME': 'client/public/',
-        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.js'),
+        'BUNDLE_DIR_NAME': 'js/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'frontend', 'static', 'webpack-stats.json'),
         'POLL_INTERVAL': 0.1,
         'TIMEOUT': None,
         'IGNORE': ['.+\.hot-update.js', '.+\.map']
