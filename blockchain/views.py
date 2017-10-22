@@ -19,3 +19,4 @@ class Api(TemplateView):
             context['error'] = e
 
         return context
+

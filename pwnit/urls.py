@@ -17,10 +17,12 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.views.generic import TemplateView
 
+from frontend import views as frontend_views
 from blockchain import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api$', views.Api.as_view()),
+    url(r'^login/$', frontend_views.login, name='login'),
     url(r'^$', TemplateView.as_view(template_name='index.html'))
 ]

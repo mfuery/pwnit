@@ -4,6 +4,6 @@
 node_modules
 db.sqlite3
 frontend/static/package-lock.json
-frontend/local_settings.py
+pwnit/local_settings.py
 main-*
 webpack-stats.json
