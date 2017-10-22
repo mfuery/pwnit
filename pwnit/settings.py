@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     'frontend',
     'blockchain',
     'webpack_loader',
+    'frontend',
+    'items',
+    'graphene_django',
+  
 ]
 
 MIDDLEWARE = [
