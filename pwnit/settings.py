@@ -141,6 +141,7 @@ GRAPHENE = {
 }
 
 CORS_ORIGIN_WHITELIST = ('localhost:8000',)
+LOGIN_REDIRECT_URL = '/'
 
 try:
     from local_settings import *
