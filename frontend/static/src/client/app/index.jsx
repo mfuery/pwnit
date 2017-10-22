@@ -4,10 +4,11 @@ import { AppContainer } from 'react-hot-loader';
 import App from './containers/app.jsx';
 import '../../../sass/main.scss';
 
+
 const render = Component => {
   ReactDom.render(
     <AppContainer>
-      <Component/>
+          <Component/>
     </AppContainer>,
     document.getElementById('app')
   )

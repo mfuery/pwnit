@@ -136,6 +136,10 @@ WEBPACK_LOADER = {
     }
 }
 
+GRAPHENE = {
+    'SCHEMA': 'pwnit.schema.schema' # Where your Graphene schema lives
+}
+
 try:
     from local_settings import *
 except ImportError:
