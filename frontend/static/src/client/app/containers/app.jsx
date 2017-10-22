@@ -43,6 +43,7 @@ class ItemList extends React.Component {
                     // description={x.node.description}
                     key={x.node.id}
                     img={'https://c2.staticflickr.com/6/5322/17413647719_5110a79f16_b.jpg'}
+                    price={'$45'}
                 />
             );
             // return (<Card
@@ -205,15 +206,25 @@ class ItemDetail extends React.Component {
                 if (props) {
                     // let items = props.allItems.edges;
                     const item = props.item;
-                    return <div className="item-detail">
-                        <h1>{`${item.name} offered by Arthas`}</h1>
+                    return (
+                    <div className="item-detail">
+                        {/*<div className="item-img"><img src={item.img} width="150"/></div>*/}
+                        <div className="item-img"><img src="https://c2.staticflickr.com/6/5322/17413647719_5110a79f16_b.jpg" width="400"/></div>
+                        <div className="item-status">
+                            Latest Bid: $55
+                        </div>
+                        <div className="item-name">
+                            <h1>{item.name}</h1>
+                        </div>
+                        <div>Starting Price: {item.price}</div>
+
                         {this.renderButtons()}
                         <div>{item.description}</div>
                         <div className="auction-container">
                             <BidComponent/>
                             <SellComponent/>
                         </div>
-                    </div>;
+                    </div>);
                 } else {
                     return <div>Loading</div>;
                 }
@@ -226,20 +237,24 @@ class ItemDetail extends React.Component {
 
 class Card extends React.Component {
     render() {
-        return (<Link
+        return (
+            <Link
                 to={`/item/${this.props.id}`}
             >
-            <div className="card">
-            <div className="card-name">
-                {this.props.name}
-            </div>
-            <div className="card-img">
-                <img src={this.props.img} width="100"/>
-            </div>
-            {/*<div className="card-desc">*/}
-            {/*{this.props.description}*/}
-            {/*</div>*/}
-            </div></Link>);
+                <div className="card">
+                    <div className="card-img">
+                        <img src={this.props.img} width="100"/>
+                    </div>
+                    <div className="subtitle">
+                        <div className="card-name">
+                            <p>{this.props.name}</p>
+                        </div>
+                        <div className="card-price">
+                            <p>{this.props.price}</p>
+                        </div>
+                    </div>
+                </div>
+            </Link>);
     }
 }
 
