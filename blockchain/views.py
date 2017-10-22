@@ -2,7 +2,6 @@ from django.views.generic import TemplateView
 from mastercardapicore.core.exceptions import APIException
 
 from pwnit.api.blockchain import Blockchain
-from pwnit.local_settings import CREDS
 
 
 class Api(TemplateView):
@@ -11,12 +10,7 @@ class Api(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(Api, self).get_context_data(**kwargs)
 
-        bc = Blockchain(
-                CREDS['consumer_key'],
-                CREDS['p12_path'],
-                CREDS['key_alias'],
-                CREDS['keystore_password']
-        )
+        bc = Blockchain()
         try:
             response = bc.test_credentials()
             context['response'] = {
