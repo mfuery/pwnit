@@ -1,0 +1,9 @@
+syntax = "proto3";
+package TM04;
+
+option java_package = "com.mastercard.blockchain";
+option java_outer_classname = "BarebonesProtocolBuffer";
+
+message Message {
+  fixed32 version = 1;
+}

@@ -9,6 +9,8 @@ iso8601==0.1.12
 promise==2.0.2
 protobuf3==0.2.1
 pytz==2017.2
+-e git+git@github.com:mfuery/mastercard-core-api-python.git@a983d247ccd92a5b264c2601df93ae7f9465cd2a#egg=mastercard_api_core
+-e git+git@github.com:mfuery/mastercard_blockchain.git@eb7e1354dfaa3a2bafe6bd991f97aa922276ee47#egg=mastercard_blockchain
 singledispatch==3.4.0.3
 six==1.11.0
 typing==3.6.2
