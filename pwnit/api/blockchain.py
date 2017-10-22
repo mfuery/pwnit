@@ -1,6 +1,5 @@
 
-from mastercardapicore import RequestMap, Config, APIException, OAuthAuthentication
-from os.path import dirname, realpath, join
+from mastercardapicore import RequestMap, Config, OAuthAuthentication
 from mastercardblockchain import Status
 
 
@@ -12,7 +11,7 @@ class Blockchain:
         self.key_password = key_password
 
     def test_credentials(self):
-        auth = OAuthAuthentication(self.consumer_key, self.key_store_path, self.key_alias, self.key_password)
+        auth = OAuthAuthentication(self.consumer_key, self.key_store_path, 'keyalias', 'keystorepassword')
         Config.setAuthentication(auth)
         Config.setDebug(True)  # Enable http wire logging
         Config.setSandbox(True)
