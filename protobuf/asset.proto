@@ -1,25 +1,31 @@
 syntax = "proto3";
-package USER;
+package TM04;
+
+option java_package = "com.mastercard.blockchain";
+option java_outer_classname = "BarebonesProtocolBuffer";
+
+message User {
+  fixed32 version = 1;
+  string uuid = 2;
+  string email = 3;
+  string name = 4;
+
+}
 
 message Asset {
   fixed32 version = 1;
-  string item_name = 'item_name';
-  string item_desc = 'item_desc';
-}
+  string item_name = 2;
+  string item_desc = 3;
 
-message Transaction {
-  fixed32 version = 1;
-  repeated Asset assets = 1;
-  repeated Output outputs = 3;
-}
+  message Transaction {
+    uint32 unix_timestamp = 2;
+    float amount = 3;
+    bool accepted = 4;
+    bool completed = 5;
+    User user1 = 6;
+    User user2 = 7;
+  }
 
-message Input {
-  bytes previous_transaction_hash = 1; int32 outpoint_index = 2;
-  bytes public_key = 3;
-  bytes signature = 4;
-}
+  repeated Transaction transactions = 99;
 
-message Output {
-  int32 value = 1;
-  bytes address = 2; // hash160 of the recipient's public key
 }
