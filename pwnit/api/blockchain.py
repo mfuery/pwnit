@@ -240,7 +240,7 @@ class Blockchain:
         response = Block.read(ref_id)
         return response
 
-    def transact(self, name):
+    def transact(self, name, amount):
         """
         Saves this item transaction to the blockchain
 
@@ -250,6 +250,8 @@ class Blockchain:
         # item_block = self.get_block(item.uuid)
         item_msg = Item()
         item_msg.name = name
+        transaction = item_msg.transactions.add()
+        transaction.amount = amount
 
         mapObj = RequestMap()
         mapObj.set("app", self.app_id)
