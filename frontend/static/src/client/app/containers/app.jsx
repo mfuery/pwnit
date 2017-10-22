@@ -11,6 +11,7 @@ import {
     Store,
 } from 'relay-runtime';
 
+import {range, map} from 'lodash';
 
 class ItemList extends React.Component {
     renderItems() {
@@ -21,8 +22,16 @@ class ItemList extends React.Component {
                     name={x.node.name}
                     // description={x.node.description}
                     key={x.node.id}
+                    img={'https://c2.staticflickr.com/6/5322/17413647719_5110a79f16_b.jpg'}
                 />
             );
+            // return (<Card
+            //     img={x.img}
+            //     name={x.name}
+            //     price={x.price}
+            //     owner={x.owner}
+            //     key={Math.random()}
+            // />);
         });
     }
     render() {
@@ -56,6 +65,9 @@ class Home extends React.Component {
                 if (props) {
                     let items = props.allItems.edges;
                     return <div>
+                        <header>
+                            <div className="title">༼ つ ◕_◕ ༽つ GET PWNIT ༼ つ ◕_◕ ༽つ</div>
+                        </header>
                         <h1>Current Offers</h1>
                         <ItemList
                             items={items}
@@ -84,7 +96,7 @@ class ItemDetail extends React.Component {
                 return (<div>
                     <Link to={'/'}><button>Go Back</button>
                     <input
-                        placeholder="Enter your counter offer">
+                        placeholder="Enter counter offer">
                     </input>
                     </Link>
                 </div>);
@@ -133,7 +145,7 @@ class ItemDetail extends React.Component {
                 if (props) {
                     // let items = props.allItems.edges;
                     const item = props.item;
-                    return <div>
+                    return <div className="item-detail">
                         <h1>{`${item.name} offered by Arthas`}</h1>
                         {this.renderButtons()}
                         <div>{item.description}</div>
@@ -143,6 +155,7 @@ class ItemDetail extends React.Component {
                 }
             }}>
         </QueryRenderer>;
+
     }
 }
 
@@ -155,6 +168,9 @@ class Card extends React.Component {
             <div className="card">
             <div className="card-name">
                 {this.props.name}
+            </div>
+            <div className="card-img">
+                <img src={this.props.img} width="100"/>
             </div>
             {/*<div className="card-desc">*/}
             {/*{this.props.description}*/}
@@ -196,11 +212,7 @@ export default class App extends React.Component {
                 <Switch>
                     <Route exact path='/' component={Home}/>
                     <Route path='/item/:id' component={ItemDetail}/>
-                    {/*<Route path='/item/:id' render={props => {*/}
-
-                    {/*}}/>*/}
                 </Switch>
-                {/*<Home/>*/}
             </div>);
     }
 }
