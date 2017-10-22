@@ -21,9 +21,15 @@ from pwnit.schema import schema
 
 from frontend import views as frontend_views
 from blockchain import views
+from django.contrib.auth import views as auth_views
+from pwnit.views import signup
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^login/$', auth_views.login, name='login'),
+    url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
+    url(r'^signup/$', signup, name='logout'),
     url(r'^api$', views.Api.as_view()),
     url(r'^login/$', frontend_views.login, name='login'),
     url(r'^graphql', GraphQLView.as_view(graphiql=True, schema=schema)),
