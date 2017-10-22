@@ -12,7 +12,7 @@ class Api(TemplateView):
 
         bc = Blockchain()
         try:
-            response = bc.status_query()
+            response = bc.status()
             context['response'] = {
                 'applications': response.get('applications'),
                 'current.ref': response.get('current.ref'),
@@ -31,4 +31,3 @@ class Api(TemplateView):
             }
 
         return context
-

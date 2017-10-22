@@ -25,7 +25,7 @@ SECRET_KEY = '-&-uc6bfu2mrng&si4%*irnv45z6t5kyz^ui1i%0y1usbtsge('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -143,7 +143,12 @@ GRAPHENE = {
 CORS_ORIGIN_WHITELIST = ('localhost:8000',)
 LOGIN_REDIRECT_URL = '/'
 
+# Protobuf definitions
+PROTOBUFS = {
+    'item': os.path.join(BASE_DIR, 'blockchain', 'proto', 'item.proto')
+}
+
 try:
-    from local_settings import *
+    from .local_settings import *
 except ImportError:
     pass

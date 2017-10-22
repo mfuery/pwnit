@@ -1,11 +1,15 @@
 from base64 import b64encode
 
-import os
 from mastercardapicore import RequestMap, Config, OAuthAuthentication
 from mastercardblockchain import Status, Block, App, Node, TransactionEntry
 
 from blockchain.proto.item_pb2 import Item
-from pwnit.local_settings import CREDS, BASE_DIR
+from django.conf import settings
+
+
+CREDS = settings.CREDS
+BASE_DIR = settings.BASE_DIR
+PROTOBUFS = settings.PROTOBUFS
 
 
 class Blockchain:
@@ -25,7 +29,8 @@ class Blockchain:
         self.app_id = CREDS['app_identifier']
 
     def status(self):
-        """Gets general metadata about the current state of the blockchain network. Useful for building dashboards.
+        """
+        Gets general metadata about the current state of the blockchain network. Useful for building dashboards.
 
         :return: Response Reference
             Parameter	Example
@@ -65,29 +70,13 @@ class Blockchain:
         response = Status.query(map_obj)
         return response
 
-        # From API documentation...
-        # print("applications[0]--> %s") % response.get("applications[0]")  # applications[0]-->MA99
-        # print("current.ref--> %s") % response.get(
-        #     "current.ref")  # current.ref-->3ee7d7608368f4133da7c45d7d5f0518d89d540891849b35cfe5ec08e298755d
-        # print("current.slot--> %s") % response.get("current.slot")  # current.slot-->1503661406
-        # print("genesis.ref--> %s") % response.get(
-        #     "genesis.ref")  # genesis.ref-->92510aeb361b62e982cfabafc56d5b666f29107fb0c5309030b883f702916e80
-        # print("genesis.slot--> %s") % response.get("genesis.slot")  # genesis.slot-->1503599076
-        # print("network--> %s") % response.get("network")  # network-->1513115205
-        # print("version--> %s") % response.get("version")  # version-->0.5.0
-        #
-        # print("HttpStatus: %s") % e.getHttpStatus()
-        # print("Message: %s") % e.getMessage()
-        # print("ReasonCode: %s") % e.getReasonCode()
-        # print("Source: %s") % e.getSource()
-
-    def provision_node(self):
-        """Provisions a Blockchain node for your application.
-
+    def provision_node(self, app_id="MA99"):
+        """
+        Provisions a Blockchain node for your application.
         """
         mapObj = RequestMap()
         mapObj.set("network", "Z0NE")
-        mapObj.set("application.name", "MA99")
+        mapObj.set("application.name", app_id)
         mapObj.set("application.description", "")
         mapObj.set("application.version", 0)
         mapObj.set("application.definition.format", "proto3")
@@ -116,7 +105,8 @@ class Blockchain:
         return response
 
     def app_update(self, message_definition_filename='item.proto', message_version=1.0, app_identifier=None):
-        """When you are permissioned onto the network, you will be issued one or more `id`s to use. You may then send
+        """
+        When you are permissioned onto the network, you will be issued one or more `id`s to use. You may then send
         or update configurations of the transaction message types you wish to use. These are specified using Protocol
         Buffer version 3 files as specified [here](https://developers.google.com/protocol-buffers/docs/proto3) This
         specification may be sent either as the canonical JSON transform or the native `.proto` file encoded as hex,
@@ -147,8 +137,8 @@ class Blockchain:
         Your protocol buffer message definition
         Required	Ly8gU2ltcGxlIG5vdGFyeSBhcHBsaWNhdGlvbg0KDQpzeW50YXggPSAicHJvdG8zIjsNCg0KcGFja2FnZSBFMTAwOw0KDQptZXNzYWdlIE1lc3NhZ2Ugew0KCWJ5dGVzIGFydGlmYWN0UmVmZXJlbmNlID0gMTsNCn0=
         """
-        f = open(os.path.join(BASE_DIR, 'blockchain', 'proto', message_definition_filename), 'rb')
-        msg_def = b64encode(f.read()).decode()
+        with open(PROTOBUFS['item'], 'rb') as f:
+            msg_def = b64encode(f.read()).decode()
 
         mapObj = RequestMap()
         mapObj.set("id", app_identifier)
@@ -178,7 +168,8 @@ class Blockchain:
         pass
 
     def read_block(self, id):
-        """A specific block may be retrieved by its hash key. This is useful when navigating the chain.
+        """
+        A specific block may be retrieved by its hash key. This is useful when navigating the chain.
 
         id  Id can be the slot or the hash of the block to retrieve
             Example: 1503574734
@@ -187,7 +178,8 @@ class Blockchain:
         return response
 
     def get_block_list(self, from_block=0, to_block=0):
-        """By default, this call returns the last confirmed block, since the `from` and `to` parameters will both
+        """
+        By default, this call returns the last confirmed block, since the `from` and `to` parameters will both
         default to the last confirmed slot number. To get a range of blocks, use the `from` and `to` parameters.
         Specifying only the `from` parameter will get a range of blocks up to the current slot. Note that this also
         means that specifying `to` without `from` will result in an error since that will mean a negative range. For
@@ -197,6 +189,26 @@ class Blockchain:
         responseList = Block.listByCriteria()
         response = responseList.get("list[0]")
         return response
+
+    def list_blocks(self, start=None, end=None):
+        """
+
+        :param start:
+        :param end:
+        :return:
+        """
+        if start or end:
+            mapObj = RequestMap()
+            if start:
+                mapObj.set('from', start)
+                if end:
+                    mapObj.set('to', end)
+            if end and not start:
+                raise ValueError('end can only be defined when you define start')
+            responseList = Block.listByCriteria(mapObj)
+        else:
+            responseList = Block.listByCriteria()
+        return responseList.get('list')
 
     def get_genesis_block(self):
         """"
@@ -228,32 +240,33 @@ class Blockchain:
         response = Block.read(ref_id)
         return response
 
-    # @todo
-    def transact(self, item):
-        """Saves this item transaction to the blockchain
+    def transact(self, name):
+        """
+        Saves this item transaction to the blockchain
 
         :param item: Item model
         :return:
         """
-        item_block = self.get_block(item.uuid)
+        # item_block = self.get_block(item.uuid)
         item_msg = Item()
-        item_msg.item_name = item.name
+        item_msg.name = name
 
         mapObj = RequestMap()
         mapObj.set("app", self.app_id)
         mapObj.set("encoding", "base64")
-        mapObj.set("value", b64encode(item_msg))
+        mapObj.set("value", b64encode(item_msg.SerializeToString()).decode())
 
         response = TransactionEntry.create(mapObj)
-        print("hash--> %s") % response.get(
-            "hash")  # hash-->1e6fc898c0f0853ca504a29951665811315145415fa5bdfa90253efe1e2977b1
-        print("slot--> %s") % response.get("slot")  # slot-->1503662624
-        print("status--> %s") % response.get("status")  # status-->pending
-        return response
+        return {
+            'hash': response.get('hash'),
+            'slot': response.get('slot'),
+            'status': response.get('status')
+        }
 
     # @todo
     def get_transaction(self, hash):
-        """Returns full detail of the value of the blockchain entry referenced by the specified khashey, if it has been
+        """
+        Returns full detail of the value of the blockchain entry referenced by the specified hashkey, if it has been
          previously recorded by your node's key-value store (database).
 
         :param hash
