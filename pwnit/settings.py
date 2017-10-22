@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'frontend',
+    'blockchain',
     'webpack_loader',
-
     'frontend',
     'items',
     'graphene_django',
