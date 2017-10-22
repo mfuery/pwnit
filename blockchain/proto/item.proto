@@ -12,10 +12,11 @@ message User {
 
 }
 
-message Asset {
+message Item {
   fixed32 version = 1;
-  string item_name = 2;
-  string item_desc = 3;
+  string uuid = 2;
+  string name = 3;
+  string description = 4;
 
   message Transaction {
     uint32 unix_timestamp = 2;
