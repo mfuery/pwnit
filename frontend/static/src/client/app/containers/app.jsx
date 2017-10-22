@@ -13,12 +13,32 @@ import {
 
 import {range, map} from 'lodash';
 
+class BidComponent extends React.Component {
+    render() {
+        return (<div className="bidder-component">
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+        </div>);
+    }
+}
+
+class SellComponent extends React.Component {
+    render() {
+        return (<div className="seller-component">
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+        </div>);
+    }
+}
+
 class ItemList extends React.Component {
     renderItems() {
         return this.props.items.map(x => {
             return (
                 <Card
-                    id={x.node.hash_ref}
+                    id={x.node.id}
                     name={x.node.name}
                     // description={x.node.description}
                     key={x.node.id}
@@ -51,10 +71,10 @@ class Home extends React.Component {
             // variables={{}}
             query={graphql`
                         query AllItemsQuery {
-                            allItems(first: 1) {
+                            allItems(first: 0) {
                                 edges {
                                     node {
-                                        id
+                                        id,
                                         name
                                     }
                                 }
@@ -82,7 +102,7 @@ class Home extends React.Component {
 }
 
 
-class Home extends React.Component {
+class MyStuff extends React.Component {
     render () {
         return <QueryRenderer
             environment={modernEnvironment}
@@ -189,6 +209,10 @@ class ItemDetail extends React.Component {
                         <h1>{`${item.name} offered by Arthas`}</h1>
                         {this.renderButtons()}
                         <div>{item.description}</div>
+                        <div className="auction-container">
+                            <BidComponent/>
+                            <SellComponent/>
+                        </div>
                     </div>;
                 } else {
                     return <div>Loading</div>;

@@ -8,7 +8,7 @@ query AllItemsQuery {
     allItems {
         edges {
             node {
-                id
+                id,
                 name
             }
         }

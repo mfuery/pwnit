@@ -1,1 +1,16 @@
 @import '_card';
+
+.bidder-component {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.seller-component {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.auction-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
