@@ -293,12 +293,12 @@ class Blockchain:
         map = RequestMap()
         map.set("hash", hash)
         response = TransactionEntry.read(id, map)
-        print("hash--> %s") % response.get(
-            "hash")  # hash-->1e6fc898c0f0853ca504a29951665811315145415fa5bdfa90253efe1e2977b1
-        print("slot--> %s") % response.get("slot")  # slot-->1503594631
-        print("status--> %s") % response.get("status")  # status-->confirmed
-        print("value--> %s") % response.get("value")  # value-->0a0f4d41393920446f63756d656e742031
-        return response
+        return {
+            'hash': response.get('hash'),
+            'slot': response.get('slot'),
+            'status': response.get('status'),
+            'value': response.get('value')
+        }
 
     # @todo
     def sync_blockchain_to_db(self):

@@ -1,0 +1,402 @@
+[
+  {
+    "name": "Witcher 3: Wild Hunt, The - Game of the Year Edition",
+    "publisher": "CD PROJEKT RED",
+    "gog_url": "/game/the_witcher_3_wild_hunt_game_of_the_year_edition",
+    "release": 1472504400,
+    "image": "//images-3.gog.com/e34b4189894110990510f1334151555bd1c0ed45926c5c8cbc7e9b80aa6744d1",
+    "developer": "CD PROJEKT RED"
+  },
+  {
+    "name": "ELEX",
+    "publisher": "THQ Nordic GmbH",
+    "gog_url": "/game/elex",
+    "release": 1508187600,
+    "image": "//images-4.gog.com/35b99cb55028791624d4a980d7c055eec81eaeb8c1e1b27a1cf3f483867b7b42",
+    "developer": "Piranha Bytes"
+  },
+  {
+    "name": "Mafia",
+    "publisher": "2K Games",
+    "gog_url": "/game/mafia",
+    "release": 1030395600,
+    "image": "//images-3.gog.com/13db1df4019ec23694c77d47da63d30f0e89dca33ab50ebdf0819fe3bc6272a8",
+    "developer": "Illusion Softworks"
+  },
+  {
+    "name": "Divinity: Original Sin 2",
+    "publisher": "Larian Studios",
+    "gog_url": "/game/divinity_original_sin_2",
+    "release": 1505336400,
+    "image": "//images-4.gog.com/7e76cc2732c61941527693f43bc013ee970d28e6b3b344dfdfd46c05b7ec81f4",
+    "developer": "Larian Studios"
+  },
+  {
+    "name": "Witcher 3: Wild Hunt, The - Expansion Pass",
+    "publisher": "CD PROJEKT RED",
+    "gog_url": "/game/the_witcher_3_wild_hunt_expansion_pass",
+    "release": 1464642000,
+    "image": "//images-3.gog.com/110067209949b038a775d031c40226af85b2ea9b6b08a682ce46e473b6f09bf2",
+    "developer": "CD PROJEKT RED"
+  },
+  {
+    "name": "Fallout: New Vegas Ultimate Edition",
+    "publisher": "Bethesda Softworks LLC",
+    "gog_url": "/game/fallout_new_vegas_ultimate_edition",
+    "release": 1287522000,
+    "image": "//images-4.gog.com/d18b14716866d6edda0361a30661f25a4e326698561e03d3b5ac1ce15d97e884",
+    "developer": "Obsidian Entertainment"
+  },
+  {
+    "name": "Fallout 3: Game of the Year Edition",
+    "publisher": "Bethesda Softworks LLC",
+    "gog_url": "/game/fallout_3_game_of_the_year_edition",
+    "release": 1255381200,
+    "image": "//images-2.gog.com/ba4ee4cbc04910b91f58115d2dbb5a0fecb6819b7d8abe6176e6300e9200ca48",
+    "developer": "Bethesda Game Studios"
+  },
+  {
+    "name": "Cuphead",
+    "publisher": "StudioMDHR Entertainment Inc.",
+    "gog_url": "/game/cuphead",
+    "release": 1506632400,
+    "image": "//images-1.gog.com/9e514e9d083c91567614bf68904ed9afa287987a78f342ac8598f1c7b883a57a",
+    "developer": "StudioMDHR Entertainment Inc."
+  },
+  {
+    "name": "Witcher 2: Assassins Of Kings, The - Enhanced Edition",
+    "publisher": "CD PROJEKT RED",
+    "gog_url": "/game/the_witcher_2",
+    "release": 1334610000,
+    "image": "//images-4.gog.com/8355e657a19311b158a3553a154e109199d6991c7791a20c3305af1f84d15ed7",
+    "developer": "CD PROJEKT RED"
+  },
+  {
+    "name": "Elder Scrolls IV: Oblivion - Game of the Year Edition Deluxe, The",
+    "publisher": "Bethesda Softworks LLC",
+    "gog_url": "/game/elder_scrolls_iv_oblivion_game_of_the_year_edition_deluxe_the",
+    "release": 1189458000,
+    "image": "//images-3.gog.com/437047af723933d9686fd99c53436f214bd615883298a885009e5056d0437815",
+    "developer": "Bethesda Game Studios"
+  },
+  {
+    "name": "Witcher 3: Wild Hunt, The - Blood and Wine",
+    "publisher": "CD PROJEKT RED",
+    "gog_url": "/game/witcher_3_wild_hunt_the_blood_and_wine_pack",
+    "release": 1464642000,
+    "image": "//images-1.gog.com/b75a14ee368898610550591cdef7990b7ea3484fb44007ecd9904e03e8aa3f18",
+    "developer": "CD PROJEKT RED"
+  },
+  {
+    "name": "Star Control\u00ae: Origins",
+    "publisher": "Stardock Entertainment",
+    "gog_url": "/game/star_control_origins",
+    "release": null,
+    "image": "//images-4.gog.com/4c18c4583836d241cc1aeca0b973af454496bdfb86aaeb5773e6b4e857a0988a",
+    "developer": "Stardock Entertainment"
+  },
+  {
+    "name": "Elder Scrolls III: Morrowind GOTY Edition, The",
+    "publisher": "Bethesda Softworks LLC",
+    "gog_url": "/game/the_elder_scrolls_iii_morrowind_goty_edition",
+    "release": 1020027600,
+    "image": "//images-4.gog.com/408994da00dea6d8c398cdc0e0d419c386355441216f74573880155dbf4deb79",
+    "developer": "Bethesda Softworks"
+  },
+  {
+    "name": "Heroes of Might and Magic\u00ae 3: Complete",
+    "publisher": "Ubisoft",
+    "gog_url": "/game/heroes_of_might_and_magic_3_complete_edition",
+    "release": 928184400,
+    "image": "//images-4.gog.com/a18a7017bdca7bdd14fb003a46522e320051d3e9c1fb939559a4517d90f86170",
+    "developer": "New World Computing, Inc."
+  },
+  {
+    "name": "Grim Dawn - Ashes of Malmouth",
+    "publisher": "Crate Entertainment",
+    "gog_url": "/game/grim_dawn_ashes_of_malmouth",
+    "release": 1507669200,
+    "image": "//images-2.gog.com/de6dfa6214002a19f904dd69f5648d43a824cb0730a78e3746b6b5c0548db60b",
+    "developer": "Crate Entertainment"
+  },
+  {
+    "name": "Witcher: Enhanced Edition, The ",
+    "publisher": "CD PROJEKT RED",
+    "gog_url": "/game/the_witcher",
+    "release": 1193346000,
+    "image": "//images-1.gog.com/37d4a208d1f5bb0e163da540ac894ba46a7d566ede31aaaefc74bbcd46ebd190",
+    "developer": "CD PROJEKT RED"
+  },
+  {
+    "name": "Risen 3: Titan Lords - Complete Edition ",
+    "publisher": "Deep Silver",
+    "gog_url": "/game/risen_3_titan_lords_complete_edition",
+    "release": 1407877200,
+    "image": "//images-2.gog.com/9e5c9681d7ade7feef863a586415fbf0ef75b1ceebad55f18bec24e9364b1547",
+    "developer": "Piranha Bytes"
+  },
+  {
+    "name": "The Inner World - The Last Wind Monk",
+    "publisher": "Headup Games, Kalypso Media Digital",
+    "gog_url": "/game/the_inner_world_the_last_wind_monk",
+    "release": 1508446800,
+    "image": "//images-1.gog.com/c2c08ce6d720956fb4521fd133944da2f128deaa9c5b6b58c7e4d1e35d107334",
+    "developer": "Studio Fizbin"
+  },
+  {
+    "name": "Neverwinter Nights 2 Complete",
+    "publisher": "Hasbro Inc.",
+    "gog_url": "/game/neverwinter_nights_2_complete",
+    "release": 1162245600,
+    "image": "//images-1.gog.com/6765258c586b4397ea7e05273f20b59693cdbea84a7d96af102c35cab07c6339",
+    "developer": "Obsidian Entertainment"
+  },
+  {
+    "name": "Risen 2: Dark Waters Gold Edition",
+    "publisher": "Deep Silver",
+    "gog_url": "/game/risen_2_dark_waters_gold_edition",
+    "release": 1375477200,
+    "image": "//images-3.gog.com/d42ca755ca4a59e8207dfd5620033a1c8213e4c33e627d115359f663ece55465",
+    "developer": "Piranha Bytes"
+  },
+  {
+    "name": "Dungeons 3",
+    "publisher": "Kalypso Media Digital",
+    "gog_url": "/game/dungeons_3",
+    "release": 1507842000,
+    "image": "//images-2.gog.com/73d9eef44ccbfeb1fd5fc2d81fca8bf449c42f76fdb0425a2753ba5a1068de7a",
+    "developer": "Realmforge Studios"
+  },
+  {
+    "name": "GWENT Starter Pack",
+    "publisher": "CD PROJEKT RED",
+    "gog_url": "/game/starter_pack",
+    "release": null,
+    "image": "//images-1.gog.com/580b4c94d4c32098e6ef71052a9edc2e3adf3b52a90979612434c66eb45b442e",
+    "developer": "CD PROJEKT RED"
+  },
+  {
+    "name": "A Hat in Time",
+    "publisher": "Gears for Breakfast",
+    "gog_url": "/game/a_hat_in_time",
+    "release": 1507150800,
+    "image": "//images-1.gog.com/8d18908bc07e6580a6e478eb09dc1622aeac014ede4c567ab94c76c5f7a6fe63",
+    "developer": "Gears for Breakfast"
+  },
+  {
+    "name": "Witcher 3: Wild Hunt, The - Hearts of Stone",
+    "publisher": "CD PROJEKT RED",
+    "gog_url": "/game/the_witcher_3_wild_hunt_hearts_of_stone",
+    "release": 1444683600,
+    "image": "//images-2.gog.com/91048944f471de09bd505bab2118a0c6f46d8f228fa5fe2662f4b50e79c42b23",
+    "developer": "CD PROJEKT RED"
+  },
+  {
+    "name": "Stardew Valley",
+    "publisher": "ConcernedApe",
+    "gog_url": "/game/stardew_valley",
+    "release": 1456437600,
+    "image": "//images-1.gog.com/e76ef4db2728146be75f28249bf5dde2a6b36ba064c07869e4c21542a1fed182",
+    "developer": "ConcernedApe"
+  },
+  {
+    "name": "Fallout 2",
+    "publisher": "Bethesda Softworks LLC",
+    "gog_url": "/game/fallout_2",
+    "release": 907102800,
+    "image": "//images-2.gog.com/2eacec7ba8ea156e8084e81fad19ddd32cb72075ccda652e285f451995fae13b",
+    "developer": "Interplay"
+  },
+  {
+    "name": "Stars in Shadow",
+    "publisher": "Iceberg Interactive",
+    "gog_url": "/game/stars_in_shadow",
+    "release": 1484776800,
+    "image": "//images-2.gog.com/ed601a3e3b164a1ad027f0dc15dc6cc442800bc65354352ae9e47a126cb2bc5c",
+    "developer": "Ashdar Games"
+  },
+  {
+    "name": "Witcher 3: Wild Hunt, The ",
+    "publisher": "CD PROJEKT RED",
+    "gog_url": "/game/the_witcher_3_wild_hunt",
+    "release": 1431982800,
+    "image": "//images-3.gog.com/60c724a052275a049d857d53957dc38e9347742f52372bb956d992b43efa8fb5",
+    "developer": "CD PROJEKT RED"
+  },
+  {
+    "name": "SWAT 4: Gold Edition",
+    "publisher": "Activision",
+    "gog_url": "/game/swat_4_gold_edition",
+    "release": 1112648400,
+    "image": "//images-2.gog.com/8aedca783fb59e220e652474143af83b4eb537bb0f77da5a8de8c5d52285db90",
+    "developer": "Irrational Games"
+  },
+  {
+    "name": "Neverwinter Nights Diamond",
+    "publisher": "Hasbro Inc.",
+    "gog_url": "/game/neverwinter_nights_diamond_edition",
+    "release": 1130968800,
+    "image": "//images-3.gog.com/690e76916523b140d297f86906c67e2816b27005ee1b6743b53332c9583b2654",
+    "developer": "BioWare"
+  },
+  {
+    "name": "Hellblade: Senua's Sacrifice",
+    "publisher": "Ninja Theory",
+    "gog_url": "/game/hellblade_senuas_sacrifice",
+    "release": 1502139600,
+    "image": "//images-2.gog.com/afc9bb5ba49275e46cf020a4656b93347fd9e0e0d8ef1ce7e2d17674b3024147",
+    "developer": "Ninja Theory"
+  },
+  {
+    "name": "Risen",
+    "publisher": "Deep Silver",
+    "gog_url": "/game/risen",
+    "release": 1254430800,
+    "image": "//images-2.gog.com/00c548e9f89355010d0bbbf0aaf4fac7948dc3297f47b4fa701afd3d2a7ef588",
+    "developer": "Piranha Bytes"
+  },
+  {
+    "name": "Grim Dawn",
+    "publisher": "Crate Entertainment",
+    "gog_url": "/game/grim_dawn",
+    "release": 1456351200,
+    "image": "//images-4.gog.com/73b321c80676bbe64152380376ca1693936a28613517aef1714ab308c40e46e8",
+    "developer": "Crate Entertainment"
+  },
+  {
+    "name": "Battle Chasers: Nightwar",
+    "publisher": "THQ Nordic GmbH",
+    "gog_url": "/game/battle_chasers_nightwar",
+    "release": 1506978000,
+    "image": "//images-4.gog.com/161a1085d92e60ec81f82b907d538f35dec9b934c61115a024f32f9b6b314c05",
+    "developer": "Airship Syndicate"
+  },
+  {
+    "name": "Star Control\u00ae Bundle",
+    "publisher": "Stardock Entertainment",
+    "gog_url": "/game/star_control_bundle",
+    "release": 1510783200,
+    "image": "//images-3.gog.com/6c6b55b8c67434e7b907b844bbece734183ab4c06d2bd1904b6226a3a90aa385",
+    "developer": "Stardock Entertainment"
+  },
+  {
+    "name": "Fallout",
+    "publisher": "Bethesda Softworks LLC",
+    "gog_url": "/game/fallout",
+    "release": 875570400,
+    "image": "//images-3.gog.com/115d2d5a521b703ed2668dbadc37ae492328666315d2633f5097114a647a0d38",
+    "developer": "Interplay"
+  },
+  {
+    "name": "Anno 1404: Gold Edition",
+    "publisher": "Ubisoft",
+    "gog_url": "/game/anno_1404_gold_edition",
+    "release": 1291759200,
+    "image": "//images-4.gog.com/37083c95f959a69801aada2d765817592e7802111e04e924c61c7cd5cb605d63",
+    "developer": "Blue Byte, Related Designs"
+  },
+  {
+    "name": "Slime Rancher",
+    "publisher": "Monomi Park",
+    "gog_url": "/game/slime_rancher",
+    "release": 1501534800,
+    "image": "//images-2.gog.com/7b379c67f964c72ce151226fbc3d5a5dcabfde89575a338996b0da82b19c0a78",
+    "developer": "Monomi Park"
+  },
+  {
+    "name": "Theme Hospital",
+    "publisher": "Electronic Arts",
+    "gog_url": "/game/theme_hospital",
+    "release": 859755600,
+    "image": "//images-2.gog.com/e179e3bc09e944c3d148c439b4d4af579ed24d4b3a7fbd16c1be108c8450a0af",
+    "developer": "Bullfrog Productions"
+  },
+  {
+    "name": "In the Shadows",
+    "publisher": "Colorspace Studio",
+    "gog_url": "/game/in_the_shadows",
+    "release": 1507842000,
+    "image": "//images-3.gog.com/b7e5c9269f6aba9a308077f6b4fa818dd11d4182b69121e4682632ae4deb85f7",
+    "developer": "Colorspace Studio"
+  },
+  {
+    "name": "Divinity: Original Sin - Enhanced Edition",
+    "publisher": "Larian Studios",
+    "gog_url": "/game/divinity_original_sin_enhanced_edition",
+    "release": 1445896800,
+    "image": "//images-1.gog.com/848d214df130e1606052c2e1fda7f13199da21bf805544843ad0ff2bdfae146c",
+    "developer": "Larian Studios"
+  },
+  {
+    "name": "Hollow Knight",
+    "publisher": "Team Cherry",
+    "gog_url": "/game/hollow_knight",
+    "release": 1487887200,
+    "image": "//images-4.gog.com/7ed5f8355cb24c1ebc403257ad7a34a51e7062cffb0409459e014497c5824c43",
+    "developer": "Team Cherry"
+  },
+  {
+    "name": "Witcher Adventure Game, The",
+    "publisher": "CD PROJEKT RED",
+    "gog_url": "/game/witcher_adventure_game",
+    "release": 1417039200,
+    "image": "//images-2.gog.com/5bc58089e14771de0c1b872c529c8b8b150b87fe28c7e4db1856389526849bb3",
+    "developer": "Can Explode"
+  },
+  {
+    "name": "Fallout Tactics",
+    "publisher": "Bethesda Softworks LLC",
+    "gog_url": "/game/fallout_tactics",
+    "release": 984607200,
+    "image": "//images-1.gog.com/41eff6e891cfb1ec0b4aaf9bf4750ead013315e7220673741366967ee8913c33",
+    "developer": "14\u00b0 East"
+  },
+  {
+    "name": "SimCity\u2122 3000 Unlimited",
+    "publisher": "Electronic Arts",
+    "gog_url": "/game/simcity_3000",
+    "release": 953330400,
+    "image": "//images-1.gog.com/5a0db4bcb30f880d12f0f8f92f2f8ae1ea2f7d370eb74516f42c76a06fda4010",
+    "developer": "Maxis Software Inc."
+  },
+  {
+    "name": "Stars in Shadow: Legacies",
+    "publisher": "Iceberg Interactive",
+    "gog_url": "/game/stars_in_shadow_legacies",
+    "release": 1506546000,
+    "image": "//images-3.gog.com/c200df472cf76a4d358f613d4abdfa1b64860ffff10c91bf8cbbf4b6e52e039b",
+    "developer": "Ashdar Games"
+  },
+  {
+    "name": "The Sexy Brutale",
+    "publisher": "Tequila Works",
+    "gog_url": "/game/the_sexy_brutale",
+    "release": 1491858000,
+    "image": "//images-4.gog.com/0cf60610c8b4700e43e28c2419194227680ef41465ffec2d552bfe9923d47823",
+    "developer": "Cavalier Game Studios & Tequila Works"
+  },
+  {
+    "name": "Settlers\u00ae 3: Ultimate Collection",
+    "publisher": "Ubisoft",
+    "gog_url": "/game/the_settlers_3_ultimate_collection",
+    "release": 959806800,
+    "image": "//images-3.gog.com/4359ca2ce063d4c20fd75747b600101f19bd7ef98195a91ee15fd435d60a59f0",
+    "developer": "Blue Byte Studio"
+  },
+  {
+    "name": "Factorio",
+    "publisher": "Wube Software LTD",
+    "gog_url": "/game/factorio",
+    "release": null,
+    "image": "//images-2.gog.com/fd1f632099404d13bb4a9c2ce3f1284e92058e00078b28baf5e6858887e5c505",
+    "developer": "Wube Software LTD"
+  },
+  {
+    "name": "Sudden Strike 4: Road to Dunkirk",
+    "publisher": "Kalypso Media Digital",
+    "gog_url": "/game/sudden_strike_4_road_to_dunkirk",
+    "release": 1508446800,
+    "image": "//images-2.gog.com/f91535aad2b8ff3e62d5cd240321c5144a041f6ea281951dab5b879dbcbb173d",
+    "developer": "Kite Games"
+  }
+]
