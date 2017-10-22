@@ -4,7 +4,7 @@ package TM04;
 option java_package = "com.mastercard.blockchain";
 option java_outer_classname = "BarebonesProtocolBuffer";
 
-message User {
+message TestUser {
   fixed32 version = 1;
   string uuid = 2;
   string email = 3;
@@ -12,20 +12,20 @@ message User {
 
 }
 
-message Asset {
+message TestAsset {
   fixed32 version = 1;
   string item_name = 2;
   string item_desc = 3;
 
-  message Transaction {
+  message TestTransaction {
     uint32 unix_timestamp = 2;
     float amount = 3;
     bool accepted = 4;
     bool completed = 5;
-    User user1 = 6;
-    User user2 = 7;
+    TestUser user1 = 6;
+    TestUser user2 = 7;
   }
 
-  repeated Transaction transactions = 99;
+  repeated TestTransaction transactions = 99;
 
 }
