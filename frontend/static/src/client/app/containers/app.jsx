@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom'
 import {
     QueryRenderer,
     graphql,
@@ -14,11 +15,14 @@ import {
 class ItemList extends React.Component {
     renderItems() {
         return this.props.items.map(x => {
-            return (<Card
-                name={x.node.name}
-                // description={x.node.description}
-                key={Math.random()}
-            />);
+            return (
+                <Card
+                    id={x.node.id}
+                    name={x.node.name}
+                    // description={x.node.description}
+                    key={x.node.id}
+                />
+            );
         });
     }
     render() {
@@ -61,9 +65,6 @@ class Home extends React.Component {
                     return <div>Loading</div>;
                 }
             }}>
-            {/*<ItemDetail*/}
-            {/*item={{name: 'lol', description: 'hello world'}}*/}
-            {/*/>*/}
         </QueryRenderer>;
     }
 }
@@ -81,42 +82,22 @@ class ItemDetail extends React.Component {
         switch(pageState) {
             case 'counter':
                 return (<div>
-                    <button onClick={e => {
-                        this.setPageState('back');
-                    }}>Go Back</button>
+                    <Link to={'/'}><button>Go Back</button>
                     <input
                         placeholder="Enter your counter offer">
                     </input>
+                    </Link>
                 </div>);
             case 'match':
                 return (<div>
-                    <button onClick={e => {
-                        this.setPageState('back');
-                    }}>Go Back</button>
-                    <button onClick={e => {
-                        this.setPageState('success');
-                    }}>Confirm</button>
-                </div>);
-            case 'success':
-                return (<div>
-                    <button onClick={e => {
-                        this.setPageState('get_key');
-                    }}>Get Key</button>
-                    <button onClick={e => {
-                        this.setPageState('confirm');
-                    }}>Profile</button>
+                    <Link to={'/'}><button>Go Back</button></Link>
+                    <Link to={'/confirm'}><button>Confirm</button></Link>
                 </div>);
             default:
                 return (<div>
-                    <button onClick={e => {
-                        this.setPageState('back');
-                    }}>Go Back</button>
-                    <button onClick={e => {
-                        this.setPageState('counter');
-                    }}>Counter</button>
-                    <button onClick={e => {
-                        this.setPageState('match');
-                    }}>Match Offer</button>
+                    <Link to={'/'}><button>Go Back</button></Link>
+                    <Link to={'/counter'}><button>Counter Offer</button></Link>
+                    <Link to={'/match'}><button>Match Offer</button></Link>
                 </div>)
 
         };
@@ -133,26 +114,52 @@ class ItemDetail extends React.Component {
         </div>
     }
     render () {
-        const item = this.props.item;
-        return <div>
-            <h1>{`${item.name} offered by Arthas`}</h1>
-            {this.renderButtons()}
-            <div>{item.description}</div>
-        </div>;
+        const item = this.props.match.params;
+        return <QueryRenderer
+            environment={modernEnvironment}
+            // operations={{}}
+            variables={{
+                id: item.id
+            }}
+            query={graphql`
+                        query ItemQuery {
+                            item(id: $id) {
+                                id
+                                name
+                            }
+                        }
+                    `}
+            render={({error, props}) => {
+                if (props) {
+                    // let items = props.allItems.edges;
+                    const item = props.item;
+                    return <div>
+                        <h1>{`${item.name} offered by Arthas`}</h1>
+                        {this.renderButtons()}
+                        <div>{item.description}</div>
+                    </div>;
+                } else {
+                    return <div>Loading</div>;
+                }
+            }}>
+        </QueryRenderer>;
     }
 }
 
 
 class Card extends React.Component {
     render() {
-        return (<div className="card">
+        return (<Link
+                to={`/item/${this.props.id}`}
+            >
+            <div className="card">
             <div className="card-name">
                 {this.props.name}
             </div>
             {/*<div className="card-desc">*/}
             {/*{this.props.description}*/}
             {/*</div>*/}
-        </div>);
+            </div></Link>);
     }
 }
 
@@ -186,7 +193,14 @@ export default class App extends React.Component {
     render () {
         return (
             <div className="app-container">
-                <Home/>
+                <Switch>
+                    <Route exact path='/' component={Home}/>
+                    <Route path='/item/:id' component={ItemDetail}/>
+                    {/*<Route path='/item/:id' render={props => {*/}
+
+                    {/*}}/>*/}
+                </Switch>
+                {/*<Home/>*/}
             </div>);
     }
 }

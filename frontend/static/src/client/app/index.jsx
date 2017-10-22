@@ -3,12 +3,15 @@ import ReactDom from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import App from './containers/app.jsx';
 import '../../../sass/main.scss';
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 
 const render = Component => {
   ReactDom.render(
     <AppContainer>
+        <BrowserRouter>
           <Component/>
+        </BrowserRouter>
     </AppContainer>,
     document.getElementById('app')
   )
