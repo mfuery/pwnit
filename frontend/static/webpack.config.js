@@ -1,17 +1,20 @@
-var webpack = require('webpack');
-var path = require('path');
-var BundleTracker = require('webpack-bundle-tracker');
+let webpack = require('webpack');
+let path = require('path');
+let BundleTracker = require('webpack-bundle-tracker');
+let ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-var BUILD_DIR = path.resolve(__dirname, 'js');
-var APP_DIR = path.resolve(__dirname, 'src/client/app');
+let BUILD_DIR = path.resolve(__dirname, 'js');
+let APP_DIR = path.resolve(__dirname, 'src/client/app');
+// let SASS_DIR = path.resolve(__dirname, 'sass');
 
-var config = {
+let config = {
   context: __dirname,
   entry: [
     'react-hot-loader/patch',
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
-    APP_DIR + '/index.jsx'
+    // SASS_DIR + '/main.scss',
+    APP_DIR + '/index.jsx',
   ],
   output: {
     path: BUILD_DIR,
@@ -29,14 +32,24 @@ var config = {
     }
   },
   module: {
-    loaders: [
-      {
-        test: /\.jsx?/,
-        include: APP_DIR,
-        exclude: /node_modules/,
-        loaders: ['babel-loader']
+    rules:[{
+      test: /\.jsx?/,
+      include: APP_DIR,
+      exclude: /node_modules/,
+      use: {
+        loader: 'babel-loader'
       }
-    ]
+    },
+      { // scss loader for webpack
+        test: /\.scss$/,
+        use: [{
+          loader: "style-loader"
+        }, {
+          loader: "css-loader"
+        }, {
+          loader: "sass-loader"
+        }]
+      }]
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
