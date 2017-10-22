@@ -3,3 +3,44 @@
 @import "base/__base";
 @import "components/__components";
 @import "layouts/__layouts";
+
+body {
+  font-family: $font;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  font-size: 20px;
+  padding: 15px 0;
+  line-height: 1.5;
+}
+
+button {
+  padding: 10px 10px;
+}
+
+
+.item-detail {
+  font-family: $font;
+  border-left: 1px solid $border-color;
+  border-right: 1px solid $border-color;
+  border-top: 1px solid $border-color;
+  flex-direction: row;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 450px 150px;
+  grid-template-rows: 200px 50px;
+  grid-gap: 1rem;
+  justify-content: center;
+  align-items: center;
+
+  /* boring properties: */
+  list-style: none;
+  width: 90vw;
+  //height: 85vh;
+  margin: 4vh auto;
+  padding: 1rem;
+  overflow: auto;
+  counter-reset: item;
+}
