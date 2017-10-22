@@ -22,16 +22,16 @@ from pwnit.schema import schema
 from frontend import views as frontend_views
 from blockchain import views
 from django.contrib.auth import views as auth_views
-from pwnit.views import signup
+from pwnit.views import signup, dash, login
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login/$', auth_views.login, name='login'),
-    url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
+    url(r'^accounts/login/', auth_views.login, name='login'),
+    url(r'^logout/$', auth_views.logout, {'next_page': '/login'}, name='logout'),
     url(r'^signup/$', signup, name='logout'),
     url(r'^api$', views.Api.as_view()),
-    url(r'^login/$', frontend_views.login, name='login'),
     url(r'^graphql', GraphQLView.as_view(graphiql=True, schema=schema)),
-    url(r'^$', TemplateView.as_view(template_name='index.html')),
+    url(r'^$', dash),
 ]

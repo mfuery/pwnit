@@ -18,7 +18,7 @@ class ItemList extends React.Component {
         return this.props.items.map(x => {
             return (
                 <Card
-                    id={x.node.id}
+                    id={x.node.hash_ref}
                     name={x.node.name}
                     // description={x.node.description}
                     key={x.node.id}
@@ -80,6 +80,46 @@ class Home extends React.Component {
         </QueryRenderer>;
     }
 }
+
+
+class Home extends React.Component {
+    render () {
+        return <QueryRenderer
+            environment={modernEnvironment}
+            // operations={{}}
+            // variables={{}}
+            query={graphql`
+                        query AllItemsQuery {
+                            allItems(first: 1) {
+                                edges {
+                                    node {
+                                        id
+                                        name
+                                    }
+                                }
+                            }
+                          }
+                    `}
+            render={({error, props}) => {
+                if (props) {
+                    let items = props.allItems.edges;
+                    return <div>
+                        <header>
+                            <div className="title">༼ つ ◕_◕ ༽つ GET PWNIT ༼ つ ◕_◕ ༽つ</div>
+                        </header>
+                        <h1>My Stuff</h1>
+                        <ItemList
+                            items={items}
+                        />
+                    </div>
+                } else {
+                    return <div>Loading</div>;
+                }
+            }}>
+        </QueryRenderer>;
+    }
+}
+
 
 class ItemDetail extends React.Component {
     constructor(props) {
@@ -209,8 +249,12 @@ export default class App extends React.Component {
     render () {
         return (
             <div className="app-container">
+                <nav>
+                    <Link to='/my_stuff'>My Stuff</Link>
+                </nav>
                 <Switch>
                     <Route exact path='/' component={Home}/>
+                    <Route exact path='/my_stuff' component={MyStuff}/>
                     <Route path='/item/:id' component={ItemDetail}/>
                 </Switch>
             </div>);
